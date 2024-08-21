@@ -4,11 +4,15 @@ import { ApplicationError } from "./src/error-handler/applicationError.js";
 import bodyParser from "body-parser";
 import UserRouter from "./src/feature/user/user.route.js";
 import AdminRouter from "./src/feature/admin/admin.route.js";
+import cors from "cors"
+
 
 
 const app=express();
+app.use(express.static('public'));
 app.use(bodyParser.json());
-
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 //routes
 app.use('/api/admin',AdminRouter);

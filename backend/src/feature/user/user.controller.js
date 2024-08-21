@@ -1,4 +1,5 @@
 
+import uploadOnCloudinary from "../../config/cloudinaryConfig.js";
 import { ApplicationError } from "../../error-handler/applicationError.js";
 import UserRepository from "./user.repository.js";
 
@@ -9,7 +10,15 @@ export default class UserController{
 
     async addUser(req,res){
         try{
-            const user=await this.userRepository.addUser(req.body);
+            const{name,email,description,phone}=req.body;
+            const fileUrl=req.files?.fileUrl[0]?.path
+           //console.log(req.file.filename);
+            console.log(fileUrl);
+            if(!fileUrl)
+                throw new ApplicationError(400,"file is required")
+            const file=await uploadOnCloudinary(fileUrl);
+            const newUser={name,email,description,phone,fileUrl:file.url}
+            const user=await this.userRepository.addUser(newUser);
             res.status(201).send(user);
         }
         catch(err){
