@@ -6,7 +6,7 @@ const UserCard=({user})=>{
     return(
         
         <motion.div
-          className="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg space-y-4"
+          className="p-6 max-w-sm mx-auto mb-4 bg-yellow-300 rounded-xl shadow-lg space-y-4 "
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           initial={{ opacity: 0, y: -50 }}

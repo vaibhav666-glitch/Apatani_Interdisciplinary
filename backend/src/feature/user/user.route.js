@@ -7,7 +7,7 @@ import { uploadFile } from "../../middleware/fileUpload.middleware.js";
 const userController=new UserController();
 
 const UserRouter=express.Router();
-UserRouter.post('/add',uploadFile.fields([{name:"fileUrl",maxCount:1}]),(req,res)=>{userController.addUser(req,res)});
+UserRouter.post('/add',(req,res)=>{userController.addUser(req,res)});
 UserRouter.get('/',(req,res)=>{userController.getAllUser(req,res)});
 UserRouter.get('/:id',(req,res)=>{userController.getUserById(req,res)});
 UserRouter.put("/update",jwtAuth,(req,res)=>{userController.updateUser(req,res)});

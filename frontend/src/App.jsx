@@ -2,7 +2,7 @@ import './index.css'
 import axios from "axios"
 import { useState, useEffect } from 'react'
 import Nav from './components/navbar.jsx';
-import Trial from './components/body.jsx';
+
 import UserList from './components/userList.jsx';
 
 function App() {
