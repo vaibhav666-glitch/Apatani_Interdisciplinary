@@ -1,7 +1,11 @@
 import { motion } from 'framer-motion';
+import OpenPdf from './openPdf.jsx';
+import { Link } from 'react-router-dom';
 const UserCard=({user})=>{
     const {name,description,email,phone,fileUrl}=user;
-    console.log(fileUrl);
+    // const file=fileUrl[0];
+    // console.log(file);
+
     
     return(
         
@@ -13,11 +17,12 @@ const UserCard=({user})=>{
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
         >
-           <h2 className="text-2xl font-bold text-gray-900">{name}</h2>
+           <h2 className="text-2xl font-bold ">{name}</h2>
            <p className="text-gray-600">{description}</p>
             <p className="text-gray-800"><strong>Email:</strong>{email}</p>
             <p className="text-gray-800"><strong>Phone:</strong>{phone}</p>
-             <a href={fileUrl}  target="_blank" >view detail</a>
+            
+            <Link to="/viewPdf" >viewDetails</Link>
            
       </motion.div>
         

@@ -5,5 +5,5 @@ export const userSchema=new mongoose.Schema({
     description:String,
     email:String,
     phone:Number,
-    fileUrl:String,
+    fileUrl:[String],
 })
