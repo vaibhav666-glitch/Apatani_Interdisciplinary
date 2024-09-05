@@ -32,7 +32,7 @@ return(
         <h1 className="text-2xl flex justify-start  font-bold mb-10 ">Categories</h1>
         <div className="flex flex-wrap justify-center  p-4 bg-gray-100">
         {users.map((user) => (
-          <UserCard key={user.id} user={user} />
+          <UserCard key={user._id} user={user} />
         ))}
         </div>
     </div>
