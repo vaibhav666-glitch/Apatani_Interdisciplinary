@@ -11,7 +11,7 @@ const [users,setUsers]=useState([]);
 useEffect(()=>{
     const fetchData=async ()=>{
         try{
-        const response=await axios.get('http://localhost:3200/api/users')
+        const response=await axios.get('https://apatani-interdisciplinary-back.onrender.com/api/users')
         //console.log()
         setUsers(response.data)
         }
