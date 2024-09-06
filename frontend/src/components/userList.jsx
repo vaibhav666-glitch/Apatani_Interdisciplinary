@@ -3,6 +3,7 @@ import axios from "axios";
 import UserCard from "./userCardRecent.jsx";
 
 
+
 const UserList=()=>{
 
 const [users,setUsers]=useState([]);
@@ -10,7 +11,7 @@ const [users,setUsers]=useState([]);
 useEffect(()=>{
     const fetchData=async ()=>{
         try{
-        const response=await axios.get('https://apatani-interdisciplinary-back.onrender.com/api/users')
+        const response=await axios.get('http://localhost:3200/api/users')
         //console.log()
         setUsers(response.data)
         }
@@ -25,8 +26,10 @@ useEffect(()=>{
 
 return(
     <>
-  
-
+  <div className="flex justify-center bg-gray-200 p-8 md:p-16 text-xl md:text-3xl font-serif text-center">
+        To connect the elders with the novices of our society and to encourage and guide research-interested minds
+      </div>
+    
     {/* Categories container */}
     <div className="container p-4 mx-auto ">
         <h1 className="text-2xl flex justify-start  font-bold mb-10 ">Categories</h1>

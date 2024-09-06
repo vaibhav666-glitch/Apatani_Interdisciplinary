@@ -4,6 +4,7 @@ import Layout from './Layout.jsx'
 import { RouterProvider,createBrowserRouter } from 'react-router-dom'
 import UserList from './components/userList.jsx'
 import OpenPdf from './components/openPdf.jsx'
+import ViewList from './components/viewList.jsx'
 
 const router=createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router=createBrowserRouter([
         path:'',
         element:<UserList/>
 
+      },
+      {
+        path:'viewList',
+        element:<ViewList/>
       },
       {
         path:'viewPdf',

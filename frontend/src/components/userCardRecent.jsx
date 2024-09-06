@@ -9,7 +9,7 @@ const UserCard=({user})=>{
     //console.log(fileUrl)
      const navigate=useNavigate();
      const handleNavigate=()=>{
-      navigate('/viewPdf',{state:{fileUrl}})
+      navigate('/viewList',{state:{user}})
      }
     
     return(
