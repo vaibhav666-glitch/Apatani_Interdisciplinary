@@ -14,7 +14,7 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3200/api/users');
+        const response = await axios.get('https://apatani-interdisciplinary-back.onrender.com/api/users');
      // console.log(response.data);
         setUsers(response.data); // Assuming response.data contains the users array
       } catch (err) {
