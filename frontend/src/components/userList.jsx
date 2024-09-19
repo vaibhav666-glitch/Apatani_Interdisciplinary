@@ -1,28 +1,12 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+
+import { useOutletContext } from "react-router-dom";
 import UserCard from "./userCardRecent.jsx";
 
 
 
 const UserList=()=>{
-
-const [users,setUsers]=useState([]);
-
-useEffect(()=>{
-    const fetchData=async ()=>{
-        try{
-        const response=await axios.get('https://apatani-interdisciplinary-back.onrender.com/api/users')
-        //console.log()
-        setUsers(response.data)
-        }
-        catch(err){
-            console.log("Unable to fetch",err);
-
-        }
-
-    }
-    fetchData();
-},[]);
+  const {users}=useOutletContext();
+//console.log(users);
 
 return(
     <>

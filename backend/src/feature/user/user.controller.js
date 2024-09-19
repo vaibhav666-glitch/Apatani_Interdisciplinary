@@ -14,8 +14,8 @@ export default class UserController{
         if (!fileUrls || fileUrls.length === 0) {
             throw new ApplicationError(400, "At least one file is required");
         }
-        const{name,email,description,phone}=req.body;
-        const newUser={name,email,description,phone,fileUrl:fileUrls}
+        const{name,department}=req.body;
+        const newUser={name,department,fileUrl:fileUrls}
         //console.log(req.body);
             const user=await this.userRepository.addUser(newUser);
             res.status(201).send(user);

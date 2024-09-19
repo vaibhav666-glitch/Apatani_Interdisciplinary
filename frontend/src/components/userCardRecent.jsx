@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
 const UserCard=({user})=>{
-    const {_id,name,description,email,phone,fileUrl}=user;
-     
+    const {_id,name,department,fileUrl}=user;
+     console.log(user);
    
     //console.log(fileUrl)
      const navigate=useNavigate();
@@ -28,9 +28,9 @@ const UserCard=({user})=>{
           
         >
           
-           <h2 className="text-2xl font-bold ">{description}</h2>
+           <h2 className="text-2xl font-bold ">{department}</h2>
            <p className="text-gray-600">{name}</p>
-            <p className="text-gray-800"><strong>Phone:</strong>{phone}</p>
+            
             
 
            

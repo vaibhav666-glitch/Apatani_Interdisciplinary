@@ -11,7 +11,7 @@ import cors from "cors"
 
 const app=express();
 
-app.use('/public', express.static('public'));
+app.use('/public/file', express.static('public/file'));
 
 
 app.use(bodyParser.json());

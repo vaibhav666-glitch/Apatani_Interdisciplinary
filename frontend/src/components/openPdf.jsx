@@ -11,14 +11,14 @@ const OpenPdf = () => {
                     <div key={index} className="pdf-container my-4 p-4 border border-gray-300 shadow-lg rounded-md">
                         {/* Option 1: Display PDF in iframe */}
                         <iframe
-                            src={`https://apatani-interdisciplinary-back.onrender.com/${file}`}
+                            src={`http://localhost:3200/${file}`}
                             className="w-full h-96"
                             title={`PDF-${index}`}
                         ></iframe>
 
                         {/* Option 2: Provide a download link */}
                         <a
-                            href={`https://apatani-interdisciplinary-back.onrender.com/${file}`}
+                            href={`http://localhost:3200/${file}`}
                             download
                             className="mt-2 inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
                         >
