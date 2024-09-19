@@ -4,10 +4,12 @@ import { ApplicationError } from "./src/error-handler/applicationError.js";
 import bodyParser from "body-parser";
 import UserRouter from "./src/feature/user/user.route.js";
 import AdminRouter from "./src/feature/admin/admin.route.js";
+// import dotenv from "dotenv"
+// //dotenv.config();
 //import path from'path';
 import cors from "cors"
 
-
+const PORT=process.env.PORT||3200
 
 const app=express();
 
@@ -36,7 +38,7 @@ app.use((err,req,res,next)=>{
 })
 
 
-app.listen(3200,()=>{
-    console.log("server is listening on 3200");
+app.listen(PORT,()=>{
+    console.log("server is listening on ",PORT);
     connectUsingMongoose()
 })
