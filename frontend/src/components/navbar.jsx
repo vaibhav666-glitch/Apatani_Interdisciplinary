@@ -13,17 +13,18 @@ export default function Nav({users}) {
 
   const handleInputChange=(event)=>{
     const value=event.target.value;
-    setValue(event.target.value);
+    setValue(value);
 
     const uniqueSuggestion=users.map(obj=>obj['name'])
     .filter(val=>val.toLowerCase().startsWith(value.toLowerCase()));
     setSuggestion(uniqueSuggestion);
   }
   const handleSuggestionClick=(value)=>{
+    console.log("yo am value ", value);
     setValue(value);
     setSuggestion([]);
     
-    const user=users.filter(val=>val['name'].toLowerCase().includes(inputValue.toLowerCase()));
+    const user=users.filter(val=>val['name'].toLowerCase().includes(value.toLowerCase()));
     //console.log("yo am result", user);
     navigate('/viewList',{state:{user}});
   
