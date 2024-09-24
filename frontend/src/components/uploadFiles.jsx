@@ -1,10 +1,12 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const UploadFiles=()=>{
 
     const [name,setName]=useState('');
     const [files, setFileUrl] = useState([]);
     const [department,setDepartment]=useState('');
+    const navigate=useNavigate();
 
     const handleSubmit=async(e)=>{
         e.preventDefault();
@@ -17,12 +19,14 @@ const UploadFiles=()=>{
         });
 
         try{
-            const response=await axios.post('http://localhost:3200/api/users/add', formData, {
+            const response=await axios.post('https://apatani-interdisciplinary-back.onrender.com/api/users/add', formData, {
                 headers:{
                     'Content-Type': 'multipart/form-data',
                 },
             })
             console.log("file uploaded successfully:", response.data)
+            navigate('/');
+           
         }
         catch(err){
             console.log("Error in uploading file: ",err);
@@ -74,8 +78,10 @@ const UploadFiles=()=>{
             <button
                 type="submit"
                 className="w-full sm:w-auto bg-indigo-600 text-white font-medium py-2 px-4 rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                
             >
-                Submit
+                
+                
             </button>
         </div>
     </form>

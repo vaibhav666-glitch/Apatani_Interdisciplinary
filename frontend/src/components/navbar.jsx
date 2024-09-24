@@ -109,13 +109,15 @@ export default function Nav({users}) {
             <Link
               to="/signin"
               className="block px-4 py-2 text-gray-800 hover:bg-indigo-600 hover:text-white"
+              onClick={toggleDropdown}
             >
               Sign In
             </Link>
             <Link
               to="/uploadFile"
               className="block px-4 py-2 text-gray-800 hover:bg-indigo-600 hover:text-white"
-            >
+              onClick={toggleDropdown}
+           >
               Add File
             </Link>
           </div>
