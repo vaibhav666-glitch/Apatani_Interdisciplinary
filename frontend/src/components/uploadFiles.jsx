@@ -80,7 +80,7 @@ const UploadFiles=()=>{
                 className="w-full sm:w-auto bg-indigo-600 text-white font-medium py-2 px-4 rounded-md shadow-sm hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 
             >
-                
+                Submit
                 
             </button>
         </div>
